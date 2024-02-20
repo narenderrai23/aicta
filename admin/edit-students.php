@@ -17,7 +17,7 @@ $Student = new Student();
 $id = $_GET['id'];
 $data = $Student->fetchStudentOld($id);
 
-if (empty($data->id)) {
+if (!isset($data->id)) {
     header('Location: student.php');
     exit;
 }

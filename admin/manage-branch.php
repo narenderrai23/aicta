@@ -35,8 +35,9 @@
                                                 <th>Branch Email</th>
                                                 <th>Branch Code</th>
                                                 <th>Branch Head</th>
-                                                <th>Phone Number</th>
                                                 <th>Created</th>
+                                                <th>Phone Number</th>
+                                                <th>Till Date</th>
                                                 <th>Action</th>
                                                 <th>Status</th>
                                             </tr>

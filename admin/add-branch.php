@@ -100,39 +100,28 @@
                                             </div>
 
                                             <div class="col-lg-6 mb-4">
-                                                <!-- <label>Valid Till Date</label>
-                                                <input type="date" name="till_date" id="date" class="form-control" required>
-                                                <label>Valid Till Date</label>
-                                                <input type="date" name="till_date" id="date" class="form-control" required> -->
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="date">Joining
-                                                                Date</label>
-                                                            <input type="date" name="join_date" placeholder="2024-02-20"
-                                                                id="date" class="form-control" required>
-                                                            <div class="invalid-feedback">
-                                                                Please provide a valid city.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="mb-3">
-                                                            <label class="form-label"
-                                                                for="till_date">Valid Till Date</label>
-                                                            <input type="text" class="form-control"
-                                                                id="till_date" placeholder="Valid Till Date" disabled>
+                                                        <label class="form-label" for="date">Joining Date</label>
+                                                        <input type="date" name="created" placeholder="2024-02-20"
+                                                            id="date" class="form-control" required>
+                                                        <div class="invalid-feedback">
+                                                            Please provide a valid city.
                                                         </div>
                                                     </div>
 
+                                                    <div class="col-md-6">
+                                                        <label class="form-label" for="till_date">Valid Till
+                                                            Date</label>
+                                                        <input type="text" class="form-control" id="till_date"
+                                                            placeholder="Valid Till Date" disabled>
+                                                    </div>
                                                 </div>
                                             </div>
 
-
-
                                             <div class="col-lg-6 mb-4">
                                                 <label>Address</label>
-                                                <textarea name="address" class="form-control" rows="4"
+                                                <textarea name="address" class="form-control" rows="5"
                                                     required></textarea>
 
                                             </div>
@@ -194,6 +183,14 @@
     <script src="../ajax/js/extra.js"></script>
     <script>
         $(document).ready(function () {
+
+            $('#date').on('change', function () {
+                var joinDate = new Date($(this).val());
+                var validTillDate = new Date(joinDate.getFullYear() + 3, joinDate.getMonth(), joinDate.getDate());
+                var formattedDate = validTillDate.toISOString().split('T')[0];
+                $('#till_date').val(formattedDate);
+            });
+
             fetchStates();
             flatpickr('#date', {
                 minDate: "today",

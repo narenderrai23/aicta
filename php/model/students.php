@@ -66,9 +66,9 @@ class Student extends Common
             if ($profile_image !== false) {
                 // Define the SQL query with named placeholders
                 $sql = "INSERT INTO students (date_admission,  course, branch_id, enrollment, student_name, father_name, father_occupation, student_dob, gender, address1, address2, 
-                student_state, student_district, student_phone, w_phone, student_email, qualification, pqualification, student_status, admin, till_date, profile_image, status)
+                student_state, student_district, student_phone, student_whatsapp_phone, student_email, qualification, pqualification, student_status, admin, till_date, profile_image, status)
                 VALUES (:date_admission,  :course_name, :branch_id, :enrollment, :student_name, :father_name, :father_occupation, :student_dob, :gender, :address1, :address2, 
-                :student_state, :student_district, :student_phone, :w_phone, :student_email, :qualification, :pqualification, :student_status, :admin,
+                :student_state, :student_district, :student_phone, :student_whatsapp_phone, :student_email, :qualification, :pqualification, :student_status, :admin,
                 :till_date, :profile_image, :status)";
                 $stmt = $conn->prepare($sql);
 
@@ -85,7 +85,7 @@ class Student extends Common
                 $stmt->bindParam(':student_state', $post['student_state']);
                 $stmt->bindParam(':student_district', $post['student_district']);
                 $stmt->bindParam(':student_phone', $post['student_phone']);
-                $stmt->bindParam(':w_phone', $post['w_phone']);
+                $stmt->bindParam(':student_whatsapp_phone', $post['student_whatsapp_phone']);
                 $stmt->bindParam(':student_email', $post['student_email']);
                 $stmt->bindParam(':qualification', $post['qualification']);
                 $stmt->bindParam(':pqualification', $post['pqualification']);
@@ -156,7 +156,7 @@ class Student extends Common
                 student_state = :student_state,
                 student_district = :student_district,
                 student_phone = :student_phone,
-                w_phone = :w_phone,
+                student_whatsapp_phone = :student_whatsapp_phone,
                 student_email = :student_email,
                 qualification = :qualification,
                 pqualification = :pqualification,
@@ -184,7 +184,7 @@ class Student extends Common
             $stmt->bindParam(':student_state', $post['student_state']);
             $stmt->bindParam(':student_district', $post['student_district']);
             $stmt->bindParam(':student_phone', $post['student_phone']);
-            $stmt->bindParam(':w_phone', $post['w_phone']);
+            $stmt->bindParam(':student_whatsapp_phone', $post['student_whatsapp_phone']);
             $stmt->bindParam(':student_email', $post['student_email']);
             $stmt->bindParam(':qualification', $post['qualification']);
             $stmt->bindParam(':pqualification', $post['pqualification']);
@@ -250,7 +250,7 @@ class Student extends Common
                 student_state = :student_state,
                 student_district = :student_district,
                 student_phone = :student_phone,
-                w_phone = :w_phone,
+                student_whatsapp_phone = :student_whatsapp_phone,
                 student_email = :student_email,
                 student_status = :student_status,
                 address1 = :address1,
@@ -276,7 +276,7 @@ class Student extends Common
             $stmt->bindParam(':student_state', $post['student_state']);
             $stmt->bindParam(':student_district', $post['student_district']);
             $stmt->bindParam(':student_phone', $post['student_phone']);
-            $stmt->bindParam(':w_phone', $post['w_phone']);
+            $stmt->bindParam(':student_whatsapp_phone', $post['student_whatsapp_phone']);
             $stmt->bindParam(':student_email', $post['student_email']);
             $stmt->bindParam(':student_status', $post['student_status']);
             $stmt->bindParam(':till_date', $todayPlusDuration, PDO::PARAM_STR);
@@ -348,7 +348,7 @@ class Student extends Common
             'student_phone',
             'student_state',
             'student_district',
-            'w_phone',
+            'student_whatsapp_phone',
             'date_admission',
             'father_name',
             'gender',

@@ -19,7 +19,7 @@ $Course = new Course();
 $id = $_GET['id'];
 $data = $Course->fetchCourse($id);
 
-if (empty($data->id)) {
+if (!isset($data->id)) {
     header('Location: manage-courses.php');
     exit;
 }

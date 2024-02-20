@@ -27,10 +27,13 @@ class BranchModel extends Common
         $head = $post['head'];
         $category = $post['category'];
         $phone = $post['phone'];
-        $till_date = $post['till_date'];
         $address = $post['address'];
         $c_address = $post['c_address'];
         $email = $post['email'];
+        if (!empty($post['created'])) {
+            $created = $post['created'];
+            $till_date = date('Y-m-d', strtotime($created . ' +3 years'));
+        }
         $password = password_hash($post['password'], PASSWORD_DEFAULT);
 
         if ($this->isValueExists('tblbranch', 'code', $code)) {
@@ -40,9 +43,9 @@ class BranchModel extends Common
             return ['status' => false, 'message' => 'Branch Email already exists.'];
         }
 
-        $sql = 'INSERT INTO tblbranch (state_id, city_id, code, name, head, category, phone, till_date, address,
+        $sql = 'INSERT INTO tblbranch (state_id, city_id, code, name, head, category, phone, created, till_date, address,
              c_address, email, password) VALUES (:state_id, :city_id, :code, :name, :head, :category,
-              :phone, :till_date, :address, :c_address, :email, :password)';
+              :phone, :created, :till_date, :address, :c_address, :email, :password)';
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':state_id', $state);
         $stmt->bindParam(':city_id', $city);
@@ -51,6 +54,7 @@ class BranchModel extends Common
         $stmt->bindParam(':head', $head);
         $stmt->bindParam(':category', $category);
         $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':created', $created);
         $stmt->bindParam(':till_date', $till_date);
         $stmt->bindParam(':address', $address);
         $stmt->bindParam(':c_address', $c_address);
@@ -66,7 +70,7 @@ class BranchModel extends Common
 
     private function validateStudentData($post)
     {
-        $requiredFields = ['state', 'city', 'code', 'name', 'head', 'category', 'phone', 'till_date', 'address', 'email'];
+        $requiredFields = ['state', 'city', 'code', 'name', 'head', 'category', 'phone', 'created', 'address', 'email'];
 
         $missingFields = $this->checkRequiredFields($post, $requiredFields);
         if (!empty($missingFields)) {

@@ -15,7 +15,7 @@ if (empty($_SESSION['loggedin'])) {
 $BranchModel = new BranchModel();
 $id = $_GET['id'];
 $data = $BranchModel->fetchBranch($id);
-if (empty($data->id)) {
+if (!isset($data->id)) {
     header('Location: manage-branch.php');
     exit;
 }

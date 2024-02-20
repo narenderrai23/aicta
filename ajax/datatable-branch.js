@@ -23,8 +23,31 @@ function getColumns() {
     { render: renderEmailColumn },
     { data: "code" },
     { data: "head" },
-    { data: "phone" },
     { data: "created" },
+    { data: "phone" },
+    {
+      data: "till_date",
+      render: function (data, type, row) {
+        var currentDate = new Date();
+        var tillDate = new Date(row.till_date);
+        var day30 = new Date();
+        day30.setDate(currentDate.getDate() + 30);
+
+        var text = '';
+        if (tillDate >= currentDate) {
+          console.log(row.id, tillDate, day30)
+          if (tillDate <= day30) {
+            text = `<span class="badge badge-soft-warning">${data}</span>`;
+          } else {
+            text = `<span class="badge badge-soft-success">${data}</span>`;
+          }
+        } else {
+          text = `<span class="badge badge-soft-danger">${data}</span>`;
+        }
+
+        return text;
+      }
+    },
     { render: renderButtonGroupColumn },
     { render: renderSwitchButtonColumn },
   ];

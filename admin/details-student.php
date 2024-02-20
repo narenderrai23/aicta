@@ -16,7 +16,7 @@ if (empty($_SESSION['loggedin'])) {
 $Student = new Student();
 $id = $_GET['id'];
 $data = $Student->fetchStudent($id);
-if (empty($data->id)) {
+if (!isset($data->id)) {
     header('Location: manage-students.php');
     exit;
 }

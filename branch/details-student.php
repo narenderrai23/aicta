@@ -20,7 +20,7 @@ $data = $Student->fetchStudent($id);
 // print_r($data);
 // die();
 
-if (empty($data->id)) {
+if (!isset($data->id)) {
     header('Location: manage-students.php');
     exit;
 }

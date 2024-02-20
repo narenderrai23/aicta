@@ -30,7 +30,7 @@ if (isset($_POST['action'])) {
 
     if ($_POST['action'] === 'fetchBranches') {
         $tableName = 'tblbranch';
-        $columns = ['id', 'name', 'email', 'head', 'code', 'created', 'phone', 'till_date', 'status'];
+        $columns = ['id', 'name', 'email', 'head', 'code', 'created', 'phone', 'till_date', 'created', 'status'];
         $count = ['students.branch_id'];
         $join = [
             "students" => ['branch_id', 'id']
