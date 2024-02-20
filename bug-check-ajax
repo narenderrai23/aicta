@@ -1,0 +1,14 @@
+// $.ajax({
+//     url: '../php/controller/datatableController.php',
+//     type: 'POST',
+//     data: {
+//         action: 'fetchCategory'
+//     },
+//     dataSrc: function(response) {
+//         console.log(response)
+//         return response.data;
+//     },
+//     success: function(response) {
+//         console.log(response)
+//     },
+// })

@@ -1,0 +1,9 @@
+{
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29",
+        "intervention/image": "^2.7",
+        "guzzlehttp/guzzle": "^7.8",
+        "phpmailer/phpmailer": "^6.8",
+        "mpdf/mpdf": "^8.2"
+    }
+}
