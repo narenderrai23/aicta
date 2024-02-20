@@ -4,7 +4,9 @@
 
 <head>
 
-    <title><?= $_SESSION['site_name'] ?> - Admin</title>
+    <title>
+        <?= $_SESSION['site_name'] ?> - Admin
+    </title>
 
     <?php include 'layouts/head.php'; ?>
 
@@ -30,7 +32,7 @@
 
                     <!-- start page title -->
                     <?php
-                    $maintitle =  $_SESSION['site_name'];
+                    $maintitle = $_SESSION['site_name'];
                     $title = 'Course';
                     ?>
                     <?php include 'layouts/breadcrumb.php'; ?>
@@ -51,11 +53,14 @@
 
 
                                             <div class="col-md-6 mb-3">
-                                                <label for="basic-url">Course Duration <span class="redTxt"> *</span></label>
+                                                <label for="basic-url">Course Duration <span class="redTxt">
+                                                        *</span></label>
                                                 <div class="input-group mb-3">
-                                                    <input class="form-control" type="number" id="cduration" maxlength="3" name="course_duration">
+                                                    <input class="form-control" type="number" id="cduration"
+                                                        maxlength="3" name="course_duration">
                                                     <div class="input-group-prepend">
-                                                        <select class="form-select" id="durationtime" name="duration_time">
+                                                        <select class="form-select" id="durationtime"
+                                                            name="duration_time">
                                                             <option value="Days">Days</option>
                                                             <option value="Months">Months</option>
                                                             <option value="Year">Year</option>
@@ -66,24 +71,29 @@
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="shortnm">Course Code<span class="redTxt">*</span></label>
-                                                <input class="form-control" type="text" id="shortnm" name="course_code" style="text-transform: uppercase;" required>
+                                                <input class="form-control" type="text" id="shortnm" name="course_code"
+                                                    style="text-transform: uppercase;" required>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <div class="">
-                                                    <label for="course_name">Course Name<span class="redTxt">*</span></label>
-                                                    <input class="form-control" type="text" id="course_name" name="course_name">
+                                                    <label for="course_name">Course Name<span
+                                                            class="redTxt">*</span></label>
+                                                    <input class="form-control" type="text" id="course_name"
+                                                        name="course_name">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="tfee">Total Fee ( ₹ )</label>
-                                                <input class="form-control" type="number" id="total_fee" name="total_fee" placeholder="( ₹ )">
+                                                <input class="form-control" type="number" id="total_fee"
+                                                    name="total_fee" placeholder="( ₹ )">
                                             </div>
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="eligible">Eligibility</label>
-                                                <input class="form-control" type="text" id="eligible" name="eligibility">
+                                                <input class="form-control" type="text" id="eligible"
+                                                    name="eligibility">
                                             </div>
 
                                             <div class="col-md-6 mb-3">
@@ -98,13 +108,15 @@
 
                                             <div class="col-md-6 mb-3">
                                                 <label for="odetail">Other Details</label>
-                                                <textarea id="odetail" class="form-control" name="other_details" rows="5"></textarea>
+                                                <textarea id="odetail" class="form-control" name="other_details"
+                                                    rows="5"></textarea>
                                             </div>
 
 
 
                                             <div class="col-md-2" style="padding-top: 25px;">
-                                                <button type="submit" class="btn bg-navy btn-primary btn-sm">Submit</button>
+                                                <button type="submit"
+                                                    class="btn bg-navy btn-primary btn-sm">Submit</button>
                                             </div>
                                         </div>
 
@@ -135,15 +147,15 @@
 
     <script>
         fetchCategory();
-        $("#ccat").change(function() {
+        $("#ccat").change(function () {
             var id = $("#ccat").val();
         });
 
-        $("#addForm").on("submit", function(e) {
+        $("#addForm").on("submit", function (e) {
             e.preventDefault();
             const formData = new FormData(this);
             formData.append("action", "addCourse");
-            ajax("../php/controller/courseController.php", formData, function(response) {
+            ajax("../php/controller/courseController.php", formData, function (response) {
                 console.log(response);
                 alert(response.message);
                 if (response.status === 'success') {

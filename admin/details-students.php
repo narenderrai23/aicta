@@ -168,7 +168,7 @@ $profile_image = profileImagePath($data->profile_image);
                                                                     </td>
                                                                     <td>
                                                                         <span class="text-secondary">
-                                                                            <?= $data->student_whatsapp_phone; ?>
+                                                                            <?= $data->w_phone; ?>
                                                                         </span>
                                                                     </td>
                                                                 </tr>

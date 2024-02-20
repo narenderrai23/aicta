@@ -113,7 +113,7 @@ class ExcelExporter
             $worksheet->setCellValue('E' . $rowNumber, $row['student_phone']);
             $worksheet->setCellValue('F' . $rowNumber, $row['student_email']);
             $worksheet->setCellValue('G' . $rowNumber, $row['student_status']);
-            $worksheet->setCellValue('H' . $rowNumber, $row['student_whatsapp_phone']);
+            $worksheet->setCellValue('H' . $rowNumber, $row['w_phone']);
             $worksheet->setCellValue('I' . $rowNumber, $row['course_name']);
             $worksheet->setCellValue('J' . $rowNumber, $row['branch_name']);
             $worksheet->setCellValue('K' . $rowNumber, $row['date_admission']);

@@ -29,7 +29,7 @@ class BranchModel extends Common
         $phone = $post['phone'];
         $till_date = $post['till_date'];
         $address = $post['address'];
-        $c_address = $post['corresponding_address'];
+        $c_address = $post['c_address'];
         $email = $post['email'];
         $password = password_hash($post['password'], PASSWORD_DEFAULT);
 
@@ -41,7 +41,7 @@ class BranchModel extends Common
         }
 
         $sql = 'INSERT INTO tblbranch (state_id, city_id, code, name, head, category, phone, till_date, address,
-             corresponding_address, email, password) VALUES (:state_id, :city_id, :code, :name, :head, :category,
+             c_address, email, password) VALUES (:state_id, :city_id, :code, :name, :head, :category,
               :phone, :till_date, :address, :c_address, :email, :password)';
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':state_id', $state);
@@ -119,7 +119,7 @@ class BranchModel extends Common
         $phone = $_POST['phone'];
         $till_date = $_POST['till_date'];
         $address = $_POST['address'];
-        $c_address = $_POST['corresponding_address'];
+        $c_address = $_POST['c_address'];
         $email = $_POST['email'];
 
         // Password is optional, so check if it's set
@@ -130,7 +130,7 @@ class BranchModel extends Common
 
         $conn = $this->db->getConnection();
         $sql = 'UPDATE tblbranch SET state_id = :state_id, city_id = :city_id, code = :code, name = :name, head = :head, category = :category,
-         phone = :phone, till_date = :till_date, address = :address, corresponding_address = :corresponding_address, email = :email';
+         phone = :phone, till_date = :till_date, address = :address, c_address = :c_address, email = :email';
 
         // Include password update if it's set
         if (isset($password)) {
@@ -149,7 +149,7 @@ class BranchModel extends Common
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':till_date', $till_date);
         $stmt->bindParam(':address', $address);
-        $stmt->bindParam(':corresponding_address', $c_address);
+        $stmt->bindParam(':c_address', $c_address);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':branch_id', $branchId);
 

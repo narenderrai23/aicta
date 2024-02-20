@@ -122,7 +122,7 @@ if (empty($data->id)) {
                                                                         <h6><i class="fab me-2 fa-whatsapp text-success"></i> WhatsApp Phone</h6>
                                                                     </td>
                                                                     <td>
-                                                                        <span class="text-secondary"><?= $data->student_whatsapp_phone; ?></span>
+                                                                        <span class="text-secondary"><?= $data->w_phone; ?></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>

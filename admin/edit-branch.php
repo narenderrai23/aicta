@@ -134,7 +134,7 @@ if (empty($data->id)) {
 
                                             <div class="col-lg-6 mb-4">
                                                 <label>Corresponding Address</label>
-                                                <textarea name="corresponding_address" class="form-control" rows="5" required><?= $data->corresponding_address ?></textarea>
+                                                <textarea name="c_address" class="form-control" rows="5" required><?= $data->c_address ?></textarea>
                                             </div>
 
                                         </div>

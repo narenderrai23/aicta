@@ -243,7 +243,7 @@
                                                     <label>Whatsapp Number<span class="asterisk">*</span></label>
                                                 </div>
                                                 <div class="col-sm-8">
-                                                    <input type="text" name="student_whatsapp_phone" class="form-control valid" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                                                    <input type="text" name="w_phone" class="form-control valid" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
                                                 </div>
                                             </div>
 

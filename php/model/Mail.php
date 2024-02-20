@@ -180,7 +180,7 @@ class MyMailer
         $studentTable .= <<<HTML
             <tr>
                 <td class="fw-bold">WhatsApp Phone:</td>
-                <td>{$post['student_whatsapp_phone']}</td>
+                <td>{$post['w_phone']}</td>
             </tr>
             <tr>
                 <td class="fw-bold">Date Admission:</td>

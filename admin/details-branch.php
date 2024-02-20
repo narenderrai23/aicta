@@ -98,7 +98,7 @@ if (empty($data->id)) {
                                             <th>Address</th>
                                             <td><?= $data->address; ?></td>
                                             <th>Corresponding Address</th>
-                                            <td><?= $data->corresponding_address; ?></td>
+                                            <td><?= $data->c_address; ?></td>
                                         </tr>
 
                                         <tr class="table-primary">

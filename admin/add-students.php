@@ -210,7 +210,7 @@
                                             <div class="col-sm-12 col-md-4">
                                                 <div class="mb-3">
                                                     <label>Whatsapp Number<span class="asterisk">*</span></label>
-                                                    <input type="text" name="student_whatsapp_phone" class="form-control valid" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                                                    <input type="text" name="w_phone" class="form-control valid" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
                                                 </div>
                                             </div>
 
